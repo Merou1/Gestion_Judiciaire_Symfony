@@ -7,6 +7,8 @@ namespace App\Entity;
 use App\Repository\AudienceRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+
 
 #[ORM\Entity(repositoryClass: AudienceRepository::class)]
 
@@ -26,6 +28,8 @@ class Audiance
     #[ORM\ManyToOne(targetEntity: Dossier::class, inversedBy: 'audiances')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Dossier $dossier = null;
+
+
 
     public function getId(): ?int
     {

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Audiance;
-use App\Form\Audiance1Type;
+use App\Form\AudianceType;
 use App\Repository\AudienceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,7 +34,7 @@ class AudianceController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $audiance = new Audiance();
-        $form = $this->createForm(Audiance1Type::class, $audiance);
+        $form = $this->createForm(AudianceType::class, $audiance);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -61,7 +61,7 @@ class AudianceController extends AbstractController
     #[Route('/{id}/edit', name: 'app_audiance_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Audiance $audiance, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(Audiance1Type::class, $audiance);
+        $form = $this->createForm(AudianceType::class, $audiance);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Room</th>
                 <th>CourtDate</th>
+                <th>Dossier</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ audiance.id }}</td>
                 <td>{{ audiance.room }}</td>
                 <td>{{ audiance.courtDate ? audiance.courtDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ audiance.dossier.titre }}</td>
                 <td>
                     <a href="{{ path('app_audiance_show', {'id': audiance.id}) }}">show</a>
                     <a href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">edit</a>

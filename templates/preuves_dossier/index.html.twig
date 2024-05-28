@@ -5,6 +5,7 @@
 {% block body %}
 <style>
 .back{
+    margin-left:15px;
             color:#aa80ff;
         }
          .back:hover{
@@ -31,9 +32,11 @@
                 <td>{{ preuvesDossier.id }}</td>
                 <td>{{ preuvesDossier.preuves }}</td>
                 <td>{{ preuvesDossier.dossier.titre }}</td>
-                <td>
+                <td >
                     <a class="back" href="{{ path('app_preuves_dossier_show', {'id': preuvesDossier.id}) }}">show</a>
                     <a class="back" href="{{ path('app_preuves_dossier_edit', {'id': preuvesDossier.id}) }}">edit</a>
+                    <a class="back" href="{{ path('app_audiance_index2') }}" class="btn btn-primary">Voir la liste des audiences</a>
+
                 </td>
             </tr>
         {% else %}

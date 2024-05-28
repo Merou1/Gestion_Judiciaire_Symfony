@@ -1,3 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Greffier Page{% endblock %}
+
 {% block body %}
-<h1>Welcome to Greffier page.</h1>
+<style>
+.back{
+            margin-top:50%;
+
+    margin-left:45px;
+    margin-right:45px;
+            color:#aa80ff;
+                        background-color:#eee6ff;
+
+                    font-size:20px;
+
+        }
+         .back:hover{
+            color:#884dff;
+            text-decoration:underline;
+
+        }
+        .div{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+</style>
+    <h1>Greffier Page</h1>
+
+    <div class="div">
+        <a class="back" href="{{ path('app_audiance_index') }}" class="btn btn-primary">Liste des audiences</a>
+        <a class="back" href="{{ path('app_dossier_index') }}" class="btn btn-secondary">Liste des dossier</a>
+    </div>
 {% endblock %}

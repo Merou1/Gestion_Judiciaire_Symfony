@@ -131,7 +131,7 @@ public function signin(Request $request, EntityManagerInterface $entityManager):
 
     switch ($user->getRole()) {
         case 'greffier':
-            return $this->redirectToRoute('app_dossier_index');
+            return $this->redirectToRoute('greffier_page');
         case 'judge':
             return $this->redirectToRoute('judge_page');
         case 'lawyer':

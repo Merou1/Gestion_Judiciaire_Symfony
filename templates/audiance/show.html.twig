@@ -1,13 +1,11 @@
-{# templates/audiance/show.html.twig #}
-
 {% extends 'base.html.twig' %}
 
-{% block title %}Court Info{% endblock %}
+{% block title %}Audiance{% endblock %}
 
 {% block body %}
-    <h1>Court Info</h1>
+    <h1>Audiance</h1>
 
-    <table>
+    <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -18,18 +16,15 @@
                 <td>{{ audiance.room }}</td>
             </tr>
             <tr>
-                <th>Court Date</th>
-                <td>{{ audiance.courtDate ? audiance.courtDate|date('Y-m-d H:i') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Dossier</th>
-                <td>{{ audiance.dossier.titre }}</td>
+                <th>CourtDate</th>
+                <td>{{ audiance.courtDate ? audiance.courtDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_court_info_index') }}">back to list</a>
-    <a href="{{ path('app_court_info_edit', {'id': audiance.id}) }}">edit</a>
+    <a href="{{ path('app_audiance_index') }}">back to list</a>
+
+    <a href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">edit</a>
 
     {{ include('audiance/_delete_form.html.twig') }}
 {% endblock %}

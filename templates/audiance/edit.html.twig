@@ -1,0 +1,16 @@
+{# templates/audiance/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Court Info{% endblock %}
+
+{% block body %}
+    <h1>Edit Court Info</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn">Save</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_court_info_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dossier{% endblock %}
+
+{% block body %}
+<style>
+.back{
+            color:#aa80ff;
+        }
+         .back:hover{
+            color:#884dff;
+            text-decoration:underline;
+            background-color:#eee6ff;
+
+        }
+</style>
+
+    <h1>Dossier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dossier.id }}</td>
+            </tr>
+
+            <tr>
+                <th>Parties Impliquées</th>
+                <td>{{ dossier.partiesImpliquees }}</td>
+            </tr>
+            <tr>
+                <th>Date Dépôt</th>
+                <td>{{ dossier.dateDepot ? dossier.dateDepot|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Documents</th>
+                <td>{{ dossier.documents ? dossier.documents|join(', ') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Preuves Dossiers</th>
+                <td>
+                    {% for preuvesDossier in dossier.preuvesDossiers %}
+                        {{ preuvesDossier.preuves }}<br>
+                    {% endfor %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="back" href="{{ path('app_dossier_index') }}">back to list</a>
+
+    <a class="back" href="{{ path('app_dossier_edit', {'id': dossier.id}) }}">edit</a>
+
+    {{ include('dossier/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,41 @@
+{# templates/audiance/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Court Info Index{% endblock %}
+
+{% block body %}
+    <h1>Court Info Index</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Room</th>
+                <th>Court Date</th>
+                <th>Dossier</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for audiance in audiances %}
+            <tr>
+                <td>{{ audiance.id }}</td>
+                <td>{{ audiance.room }}</td>
+                <td>{{ audiance.courtDate ? audiance.courtDate|date('Y-m-d H:i') : '' }}</td>
+                <td>{{ audiance.dossier.titre }}</td>
+                <td>
+                    <a href="{{ path('app_court_info_show', {'id': audiance.id}) }}">show</a>
+                    <a href="{{ path('app_court_info_edit', {'id': audiance.id}) }}">edit</a>
+                    <form method="post" action="{{ path('app_court_info_delete', {'id': audiance.id}) }}" style="display:inline-block">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ audiance.id) }}">
+                        <button class="btn">delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_court_info_new') }}">Create new</a>
+{% endblock %}

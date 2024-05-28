@@ -5,6 +5,7 @@ namespace App\Form;
 
 use App\Entity\Audiance;
 use App\Entity\Dossier;
+use App\Entity\Judge;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -26,7 +27,15 @@ class AudianceType extends AbstractType
                 'class' => Dossier::class,
                 'choice_label' => 'titre',
                 'label' => 'Dossier'
-            ]);
+            ])
+            ->add('judges', EntityType::class, [
+                'class' => Judge::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true,
+                'attr' => ['class' => 'form-control'],
+            ])
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

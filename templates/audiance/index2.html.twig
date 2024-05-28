@@ -12,6 +12,7 @@
                 <th>Room</th>
                 <th>CourtDate</th>
                 <th>Dossier</th>
+                <th>Judges</th>
             </tr>
         </thead>
         <tbody>
@@ -21,12 +22,15 @@
                 <td>{{ audiance.room }}</td>
                 <td>{{ audiance.courtDate ? audiance.courtDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ audiance.dossier.titre }}</td>
-
-             
+                <td>
+                    {% for judge in audiance.judges %}
+                        {{ judge.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

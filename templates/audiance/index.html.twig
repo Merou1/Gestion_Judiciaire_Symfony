@@ -3,6 +3,17 @@
 {% block title %}Audiance index{% endblock %}
 
 {% block body %}
+<style>
+.back{
+            color:#aa80ff;
+        }
+         .back:hover{
+            color:#884dff;
+            text-decoration:underline;
+            background-color:#eee6ff;
+
+        }
+</style>
     <h1>Audiance index</h1>
 
     <table class="table">
@@ -35,8 +46,8 @@
                     {% endfor %}
                 </td>
                 <td>
-                    <a href="{{ path('app_audiance_show', {'id': audiance.id}) }}">show</a>
-                    <a href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">edit</a>
+                    <a class="back" href="{{ path('app_audiance_show', {'id': audiance.id}) }}">show</a>
+                    <a class="back" href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -47,5 +58,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_audiance_new') }}">Create new</a>
+    <a class="back" href="{{ path('app_audiance_new') }}">Create new</a>
 {% endblock %}

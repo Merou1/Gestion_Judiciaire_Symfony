@@ -35,7 +35,11 @@
                 <td>{{ dossier.titre }}</td>
                 <td>{{ dossier.partiesImpliquees }}</td>
                 <td>{{ dossier.dateDepot ? dossier.dateDepot|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ dossier.documents ? dossier.documents|join(', ') : '' }}</td>
+                <td>
+                {% for document in dossier.documents %}
+                    <a class="back" href="{{ asset('uploads/documents/' ~ document) }}" target="_blank">{{ document }}</a><br>
+                {% endfor %}
+                </td>  
                 <td>
                     {% for preuvesDossier in dossier.preuvesDossiers %}
                         {{ preuvesDossier.preuves }}<br>

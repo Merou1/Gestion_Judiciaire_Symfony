@@ -35,7 +35,6 @@
                 <td >
                     <a class="back" href="{{ path('app_preuves_dossier_show', {'id': preuvesDossier.id}) }}">show</a>
                     <a class="back" href="{{ path('app_preuves_dossier_edit', {'id': preuvesDossier.id}) }}">edit</a>
-                    <a class="back" href="{{ path('app_audiance_index2') }}" class="btn btn-primary">Voir l'audience</a>
 
                 </td>
             </tr>
@@ -46,6 +45,8 @@
         {% endfor %}
         </tbody>
     </table>
+            <a class="back" href="{{ path('app_audiance_index2') }}" class="btn btn-primary">Voir les audiences</a>
+
 
     <a class="back" href="{{ path('app_preuves_dossier_new') }}">Create new</a>
 {% endblock %}

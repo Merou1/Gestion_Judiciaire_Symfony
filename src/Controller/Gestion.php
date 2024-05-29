@@ -133,7 +133,7 @@ public function signin(Request $request, EntityManagerInterface $entityManager):
         case 'greffier':
             return $this->redirectToRoute('greffier_page');
         case 'judge':
-            return $this->redirectToRoute('judge_page');
+            return $this->redirectToRoute('app_jugement_index');
         case 'lawyer':
             return $this->redirectToRoute('app_preuves_dossier_index');
     }

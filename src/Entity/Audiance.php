@@ -33,6 +33,11 @@ class Audiance
 
     #[ORM\ManyToMany(targetEntity: Judge::class)]
     private Collection $judges;
+    
+    
+    #[ORM\OneToMany(mappedBy: 'audiance', targetEntity: Jugement::class)]
+    private Collection $jugements;
+
 
     public function getId(): ?int
     {
@@ -41,6 +46,8 @@ class Audiance
     }
     public function __construct()
     {
+        $this->jugements = new ArrayCollection();
+
         $this->judges = new ArrayCollection();
     }
 
@@ -94,6 +101,32 @@ class Audiance
     public function setDossier(?Dossier $dossier): self
     {
         $this->dossier = $dossier;
+        return $this;
+    }
+
+    public function getJugements(): Collection
+    {
+        return $this->jugements;
+    }
+
+    public function addJugemets(Jugement $jugements): self
+    {
+        if (!$this->jugements->contains($jugements)) {
+            $this->jugements[] = $jugements;
+            $jugements->setAudiance($this);
+        }
+
+        return $this;
+    }
+
+    public function removeJugements(Jugement $jugements): self
+    {
+        if ($this->jugements->removeElement($jugements)) {
+            if ($jugements->getAudiance() === $this) {
+                $jugements->setAudiance(null);
+            }
+        }
+
         return $this;
     }
 }

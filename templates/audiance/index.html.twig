@@ -13,6 +13,7 @@
                 <th>CourtDate</th>
                 <th>Dossier</th>
                 <th>Judges</th>
+                <th>Jugement</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,6 +27,11 @@
                 <td>
                     {% for judge in audiance.judges %}
                         {{ judge.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+                    <td>
+                    {% for jugement in audiance.jugements %}
+                        {{ jugement.jugements }}{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </td>
                 <td>

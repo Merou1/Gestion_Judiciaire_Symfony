@@ -21,6 +21,8 @@
             <tr>
                 <th>Id</th>
                 <th>Jugements</th>
+                <th>numéro d'audiance et room</th>
+
                 <th>actions</th>
             </tr>
         </thead>
@@ -29,6 +31,8 @@
             <tr>
                 <td>{{ jugement.id }}</td>
                 <td>{{ jugement.jugements }}</td>
+                <td>{{ jugement.audiance.id }} - {{ jugement.audiance.room }}</td>
+
                 <td>
                     <a class="back" href="{{ path('app_jugement_show', {'id': jugement.id}) }}">show</a>
                     <a class="back" href="{{ path('app_jugement_edit', {'id': jugement.id}) }}">edit</a>

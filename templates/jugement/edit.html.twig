@@ -1,13 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Jugement{% endblock %}
+{% block title %}New Jugement{% endblock %}
 
 {% block body %}
-    <h1>Edit Jugement</h1>
+    <style>
+        .form-container {
+            height: 50%;
+            margin-top: 10%;
+            box-shadow: 5px 5px 5px 5px #eee6ff;
+            padding: 20px;
+        }
 
-    {{ include('jugement/_form.html.twig', {'button_label': 'Update'}) }}
+        .form-group {
+            margin-top: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
 
-    <a href="{{ path('app_jugement_index') }}">back to list</a>
+        .form-group2 {
+            margin-top: 15%;
+        }
 
-    {{ include('jugement/_delete_form.html.twig') }}
+        .form-group label {
+            margin-right: 100px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4835d4;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            margin-top: 40%;
+        }
+
+        .btn:hover {
+            background-color: #9966ff;
+        }
+
+        .back {
+            color: #aa80ff;
+        }
+
+        .back:hover {
+            color: #884dff;
+            text-decoration: underline;
+        }
+    </style>
+
+    <h1>Create new Jugement</h1>
+
+    <div class="form-container">
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+    </div>
+
+    <a class="back" href="{{ path('app_jugement_index') }}">Back to list</a>
 {% endblock %}

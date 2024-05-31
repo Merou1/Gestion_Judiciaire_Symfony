@@ -14,7 +14,7 @@
 
         }
 </style>
-    <h1>Audiance</h1>
+    <h1>Audience</h1>
 
     <table class="table">
         <tbody>
@@ -33,9 +33,9 @@
         </tbody>
     </table>
 
-    <a class="back" href="{{ path('app_audiance_index') }}">back to list</a>
+    <a class="back" href="{{ path('app_audiance_index') }}">Retour à la liste</a>
 
-    <a class="back" href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">edit</a>
+    <a class="back" href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">editer</a>
 
     {{ include('audiance/_delete_form.html.twig') }}
 {% endblock %}

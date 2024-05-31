@@ -14,14 +14,14 @@
 
         }
 </style>
-    <h1>Jugement index</h1>
+    <h1>Jugement</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Jugements</th>
-                <th>numéro d'audiance et room</th>
+                <th>numéro d'audiance et salle</th>
 
                 <th>actions</th>
             </tr>
@@ -34,8 +34,8 @@
                 <td>{{ jugement.audiance.id }} - {{ jugement.audiance.room }}</td>
 
                 <td>
-                    <a class="back" href="{{ path('app_jugement_show', {'id': jugement.id}) }}">show</a>
-                    <a class="back" href="{{ path('app_jugement_edit', {'id': jugement.id}) }}">edit</a>
+                    <a class="back" href="{{ path('app_jugement_show', {'id': jugement.id}) }}">voir</a>
+                    <a class="back" href="{{ path('app_jugement_edit', {'id': jugement.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -46,5 +46,5 @@
         </tbody>
     </table>
 
-    <a class="back" href="{{ path('app_jugement_new') }}">Create new</a>
+    <a class="back" href="{{ path('app_jugement_new') }}">créer un nouveau jugement</a>
 {% endblock %}

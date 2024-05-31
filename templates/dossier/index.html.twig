@@ -46,8 +46,8 @@
                     {% endfor %}
                 </td>
                 <td>
-                    <a class="back" href="{{ path('app_dossier_show', {'id': dossier.id}) }}">show</a>
-                    <a class="back" href="{{ path('app_dossier_edit', {'id': dossier.id}) }}">edit</a>
+                    <a class="back" href="{{ path('app_dossier_show', {'id': dossier.id}) }}">voir</a>
+                    <a class="back" href="{{ path('app_dossier_edit', {'id': dossier.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -58,5 +58,7 @@
         </tbody>
     </table>
 
-    <a class="back" href="{{ path('app_dossier_new') }}">Create new</a>
+    <a class="back" href="{{ path('app_dossier_new') }}">Créer nouveau</a>
+        <a class="back" href="{{ path('greffier_page') }}">Retour </a>
+
 {% endblock %}

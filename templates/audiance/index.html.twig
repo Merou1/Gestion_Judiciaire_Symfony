@@ -14,16 +14,16 @@
 
         }
 </style>
-    <h1>Audiance index</h1>
+    <h1>Audiances</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Room</th>
-                <th>CourtDate</th>
+                <th>Salle</th>
+                <th>date de l'audience</th>
                 <th>Dossier</th>
-                <th>Judges</th>
+                <th>Juges</th>
                 <th>Jugement</th>
                 <th>actions</th>
             </tr>
@@ -46,8 +46,8 @@
                     {% endfor %}
                 </td>
                 <td>
-                    <a class="back" href="{{ path('app_audiance_show', {'id': audiance.id}) }}">show</a>
-                    <a class="back" href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">edit</a>
+                    <a class="back" href="{{ path('app_audiance_show', {'id': audiance.id}) }}">voir</a>
+                    <a class="back" href="{{ path('app_audiance_edit', {'id': audiance.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}

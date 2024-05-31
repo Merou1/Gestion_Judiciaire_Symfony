@@ -15,7 +15,7 @@
 
         }
 </style>
-    <h1>Preuves Dossier index</h1>
+    <h1>Dossier des preuves</h1>
 
     <table class="table">
         <thead>
@@ -33,8 +33,8 @@
                 <td>{{ preuvesDossier.preuves }}</td>
                 <td>{{ preuvesDossier.dossier.titre }}</td>
                 <td >
-                    <a class="back" href="{{ path('app_preuves_dossier_show', {'id': preuvesDossier.id}) }}">show</a>
-                    <a class="back" href="{{ path('app_preuves_dossier_edit', {'id': preuvesDossier.id}) }}">edit</a>
+                    <a class="back" href="{{ path('app_preuves_dossier_show', {'id': preuvesDossier.id}) }}">voir</a>
+                    <a class="back" href="{{ path('app_preuves_dossier_edit', {'id': preuvesDossier.id}) }}">editer</a>
 
                 </td>
             </tr>
@@ -48,5 +48,5 @@
             <a class="back" href="{{ path('app_audiance_index2') }}" class="btn btn-primary">Voir les audiences</a>
 
 
-    <a class="back" href="{{ path('app_preuves_dossier_new') }}">Create new</a>
+    <a class="back" href="{{ path('app_preuves_dossier_new') }}">Créer nouveau dossier des preuves</a>
 {% endblock %}

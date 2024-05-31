@@ -1,5 +1,4 @@
 <?php
-// src/Controller/DossierController.php
 
 namespace App\Controller;
 
@@ -51,7 +50,7 @@ class DossierController extends AbstractController
                         );
                         $documentNames[] = $newFilename;
                     } catch (FileException $e) {
-                        // Handle exception if something happens during file upload
+                        //ila we9eat shy haja flupload dl file
                     }
                 }
                 $dossier->setDocuments($documentNames);

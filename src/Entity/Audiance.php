@@ -1,6 +1,5 @@
 <?php
 
-// src/Entity/Audiance.php
 
 namespace App\Entity;
 
